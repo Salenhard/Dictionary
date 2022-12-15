@@ -1,7 +1,7 @@
 #pragma once
 
-#include<iostream>
-#include"TreeNode.h"
+#include <iostream>
+#include "TreeNode.h"
 
 template <class T>
 class BinSTree {
@@ -127,7 +127,7 @@ public:						// методы дерева
 		return *this;
 	}
 
-	void clearList(TreeNode<T>* t) {
+	void clearList(TreeNode<T>* t = root) {
 		if (t != nullptr)
 		{
 			clearList(t->left);

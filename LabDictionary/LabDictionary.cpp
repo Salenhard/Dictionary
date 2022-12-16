@@ -22,6 +22,7 @@ string remove(string str, int i, int j)
 			k++;
 		}
 	}
+	return str;
 }
 void PrintEntry(const KeyValue<string, string>& word)
 {
@@ -44,12 +45,17 @@ void PrintEntry(const KeyValue<string, string>& word)
 		linepos = 0;
 	}
 }
-string ReadString(string str, istream& istr, char delimiter = ' ') {
+int ReadString(string &str, istream& istr, char delimiter = '.') {
 	char tmp[256];
+	int size;
 	if (istr.getline(tmp, 256, delimiter)) {
+		size = strlen(tmp);
 		str = tmp;
-		return str;
+		return size;
 	}
+	else
+		return -1;
+	
 }
 int main()
 {
@@ -63,12 +69,12 @@ int main()
 		cerr << "Файл defs.dat не найден" << endl;
 		exit(1);
 	}
-	while (fin >> word)
+	while (fin >> word) {
 		if (fin.eof())
 			break;
-	definition = ReadString(definition, fin);
-	
-	wordDictionary[word] += definition;
+		ReadString(definition, fin);
+		wordDictionary[word] += definition;
+	}
 	DictionaryIterator<string, string> dictIter(wordDictionary);
 
 	cout << "Тольковый словарь:" << endl << endl;

@@ -3,7 +3,7 @@ template <class K, class T>
 class KeyValue
 {
 protected:
-	const K key;
+	K key;
 
 public:
 	// словарные данные являются общедоступными
@@ -12,7 +12,7 @@ public:
 	KeyValue() {
 	}
 	// операторы присваивания. не изменяют ключ
-	KeyValue<K, T>& operator= (const KeyValue<K, T>& rhs) const;
+	KeyValue<K, T>& operator= (const KeyValue<K, T>& rhs);
 
 	// операторы сравнения, сравнивают два ключа
 	int operator== (const KeyValue<K, T>& value) const;
@@ -27,7 +27,7 @@ public:
 template <class K, class T>
 KeyValue<K, T>::KeyValue(K keyValue, T datavalue) : key(keyValue), value(datavalue) {};
 template <class K, class T>
-KeyValue<K, T>& KeyValue<K, T>::operator= (const KeyValue<K, T>& rhs) const {
+KeyValue<K, T>& KeyValue<K, T>::operator= (const KeyValue<K, T>& rhs) {
 	if (key != rhs.key) {
 		key = rhs.key;
 		value = rhs.value;

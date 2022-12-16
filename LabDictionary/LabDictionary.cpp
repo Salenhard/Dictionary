@@ -44,9 +44,16 @@ void PrintEntry(const KeyValue<string, string>& word)
 		linepos = 0;
 	}
 }
-
+string ReadString(string str, istream& istr, char delimiter = ' ') {
+	char tmp[256];
+	if (istr.getline(tmp, 256, delimiter)) {
+		str = tmp;
+		return str;
+	}
+}
 int main()
 {
+	setlocale(0, "ru");
 	ifstream fin;
 	string word, definition;
 	Dictionary<string, string> wordDictionary("");
@@ -59,7 +66,7 @@ int main()
 	while (fin >> word)
 		if (fin.eof())
 			break;
-	definition;
+	definition = ReadString(definition, fin);
 	
 	wordDictionary[word] += definition;
 	DictionaryIterator<string, string> dictIter(wordDictionary);
@@ -71,5 +78,5 @@ int main()
 		cout << endl;
 	}
 
-	wordDictionary.clearList();
+	wordDictionary.clearList(wordDictionary.getRoot());
 }

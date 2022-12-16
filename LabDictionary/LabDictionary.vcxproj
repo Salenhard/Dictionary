@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DictionaryIterator.cpp" />
     <ClCompile Include="LabDictionary.cpp" />
   </ItemGroup>
   <ItemGroup>

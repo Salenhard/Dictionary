@@ -5,9 +5,11 @@
 template<class K, class T>
 class DictionaryIterator : public InorderIterator<KeyValue<K,T>>
 {
-private:
-	Dictionary<K,T> dictionary;
 public:
-	DictionaryIterator(Dictionary<K,T>& dict) : InorderIterator<KeyValue<K, T>>(dict.getRoot()), dictionary(dict) {};
+	DictionaryIterator(Dictionary<K,T>& dict) : InorderIterator<KeyValue<K, T>>(dict.getRoot()) {}
+
+	void SetList(Dictionary<K, T>& dict) {
+		this->SetTree(dict.GetRoot());
+	}
 };
 

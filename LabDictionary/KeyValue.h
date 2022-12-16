@@ -9,7 +9,8 @@ public:
 	// словарные данные €вл€ютс€ общедоступными
 	T value;
 	KeyValue(K keyValue, T dataValue);
-
+	KeyValue() {
+	}
 	// операторы присваивани€. не измен€ют ключ
 	KeyValue<K, T>& operator= (const KeyValue<K, T>& rhs) const;
 
@@ -24,15 +25,15 @@ public:
 };
 
 template <class K, class T>
-KeyValue<K, T>::KeyValue(K keyValue, T datavalue) : key(keyValue), value(dataValue) {};
+KeyValue<K, T>::KeyValue(K keyValue, T datavalue) : key(keyValue), value(datavalue) {};
 template <class K, class T>
 KeyValue<K, T>& KeyValue<K, T>::operator= (const KeyValue<K, T>& rhs) const {
 	if (key != rhs.key) {
 		key = rhs.key;
 		value = rhs.value;
+		return *this;
 	}
-	else
-		return
+	else return *this;
 }
 
 template <class K, class T>

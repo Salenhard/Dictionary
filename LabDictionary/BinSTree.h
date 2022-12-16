@@ -127,7 +127,7 @@ public:						// методы дерева
 		return *this;
 	}
 
-	void clearList(TreeNode<T>* t = root) {
+	void clearList(TreeNode<T>* t) {
 		if (t != nullptr)
 		{
 			clearList(t->left);
@@ -187,7 +187,7 @@ public:						// методы дерева
 		delete p;
 	}
 
-	TreeNode<T>* findNode(const T& item, TreeNode<T>* &parent = nullptr) const {
+	TreeNode<T>* findNode(const T& item, TreeNode<T>* parent = nullptr) const {
 		TreeNode<T>* t = this->root;
 		parent = nullptr;
 

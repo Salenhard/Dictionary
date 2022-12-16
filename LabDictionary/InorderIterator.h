@@ -23,7 +23,7 @@ private:
     }
 public:
     //конструктор
-    InorderIterator(TreeNode<T>* tree, int n);
+    InorderIterator(TreeNode<T>* tree, int n = 0);
     //реализации базовых операций прохождения
     virtual void Next(void);
     virtual void Reset(void);

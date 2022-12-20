@@ -29,21 +29,7 @@ void PrintEntry(const KeyValue<string, string>& word)
 	KeyValue<string, string> w = word;
 	int linepos = w.Key().length() + 3;
 	int i;
-	cout << w.Key() << " - ";
-	while (!w.value.empty())
-	{
-		if (w.value.length() > 65 - linepos)
-		{
-			i = 64 - linepos;
-			while (w.value[i] != ' ')
-				i--;
-		}
-		else
-			i = w.value.length() - 1;
-		cout << w.value.substr(0, i + 1) << endl;
-		w.value = remove(w.value, 0, i + 1);
-		linepos = 0;
-	}
+	cout << w.Key() << " - "<< w.value;
 }
 int ReadString(string &str, istream& istr, char delimiter = '.') {
 	char tmp[256];

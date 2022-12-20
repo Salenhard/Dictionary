@@ -1,5 +1,3 @@
 ﻿  LabDictionary.cpp
-C:\Users\Александр\source\repos\Dictionary\LabDictionary\LabDictionary.cpp(30,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Александр\source\repos\Dictionary\LabDictionary\LabDictionary.cpp(42,28): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Александр\source\repos\Dictionary\LabDictionary\LabDictionary.cpp(52,21): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-  LabDictionary.vcxproj -> C:\Users\Александр\source\repos\Dictionary\x64\Debug\LabDictionary.exe
+C:\Users\gurba\source\repos\Dictionary\LabDictionary\LabDictionary.cpp(36,21): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  LabDictionary.vcxproj -> C:\Users\gurba\source\repos\Dictionary\x64\Debug\LabDictionary.exe

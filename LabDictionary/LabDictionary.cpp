@@ -27,7 +27,7 @@ string remove(string str, int i, int j)
 void PrintEntry(const KeyValue<string, string>& word)
 {
 	KeyValue<string, string> w = word;
-	cout << w.Key() << " - "<< w.value;
+	cout << w.Key() << " - " << w.value;
 }
 int ReadString(string &str, istream& istr, char delimiter = '.') {
 	char tmp[256];

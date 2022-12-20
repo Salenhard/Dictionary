@@ -23,7 +23,7 @@ private:
     }
 public:
     //конструктор
-    InorderIterator(TreeNode<T>* tree, int n = 0);
+    InorderIterator(TreeNode<T>* tree, int n = 100);
     //реализации базовых операций прохождения
     virtual void Next(void);
     virtual void Reset(void);
@@ -65,8 +65,9 @@ template<class T>
 void InorderIterator<T>::Reset(void) {
     //дейсвтия как у конструктора
     this->iterationComplete = (this->root == NULL);
-    this->current = GoFarLeft(this->root);
     this->S.clear(); //и также очищаем стек
+    this->current = GoFarLeft(this->root);
+   
 }
 
 //геттер данных
